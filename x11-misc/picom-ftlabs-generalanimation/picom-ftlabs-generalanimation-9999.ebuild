@@ -9,7 +9,7 @@ inherit git-r3 meson python-any-r1 virtualx xdg
 DESCRIPTION="More than 10 unique animation supported picom fork (open window, tag change, fading ...) "
 HOMEPAGE="https://github.com/FT-Labs/picom"
 EGIT_REPO_URI="https://github.com/FT-Labs/picom.git"
-EGIT_BRANCH="next"
+EGIT_BRANCH="generalanimation"
 
 LICENSE="MPL-2.0 MIT"
 SLOT="0"
