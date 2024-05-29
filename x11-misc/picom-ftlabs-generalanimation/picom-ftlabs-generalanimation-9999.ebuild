@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{9..12} )
 inherit git-r3 meson python-any-r1 virtualx xdg
 
 DESCRIPTION="More than 10 unique animation supported picom fork (open window, tag change, fading ...) "
@@ -13,7 +13,7 @@ EGIT_BRANCH="generalanimation"
 
 LICENSE="MPL-2.0 MIT"
 SLOT="0"
-IUSE="+config-file +dbus +doc +drm +opengl pcre test"
+IUSE="+config-file dbus +doc +drm opengl pcre test"
 
 REQUIRED_USE="test? ( dbus )" # avoid "DBus support not compiled in!"
 RESTRICT="test" # but tests require dbus_next
@@ -24,6 +24,7 @@ RDEPEND="dev-libs/libev
 	x11-libs/libxcb
 	x11-libs/libXext
 	x11-libs/pixman
+	x11-libs/xcb-util
 	x11-libs/xcb-util-image
 	x11-libs/xcb-util-renderutil
 	config-file? (
@@ -31,9 +32,11 @@ RDEPEND="dev-libs/libev
 	)
 	dbus? ( sys-apps/dbus )
 	drm? ( x11-libs/libdrm )
-	opengl? ( virtual/opengl )
-	pcre? ( dev-libs/libpcre2:= )
-	!x11-misc/compton"
+	opengl? (
+		media-libs/libepoxy
+		virtual/opengl
+	)
+	pcre? ( dev-libs/libpcre2:= )"
 DEPEND="${RDEPEND}
 	x11-base/xorg-proto"
 BDEPEND="virtual/pkgconfig
