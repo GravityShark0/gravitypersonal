@@ -27,11 +27,11 @@ BDEPEND="virtual/pkgconfig"
 # }
 
 src_compile() {
-	emake -C src all
+	emake -C all
 }
 
 src_test() {
-	emake -C src test
+	emake -C test
 }
 
 src_install() {
