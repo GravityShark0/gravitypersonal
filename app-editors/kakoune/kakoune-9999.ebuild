@@ -16,14 +16,15 @@ KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86"
 
 BDEPEND="virtual/pkgconfig"
 
-src_prepare() {
-	# sed -i '/CXXFLAGS += -O3/d' src/Makefile || die
-	default
-}
+# src_prepare() {
+# sed -i '/CXXFLAGS += -O3/d' src/Makefile || die
+# 	default
+# }
 
-src_configure() {
-	tc-export CXX
-}
+# src_configure() {
+# 	# tc-export CXX
+# 	default
+# }
 
 src_compile() {
 	emake -C src all
