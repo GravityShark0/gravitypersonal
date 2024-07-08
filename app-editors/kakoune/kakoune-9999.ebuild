@@ -36,6 +36,6 @@ src_test() {
 src_install() {
 	emake PREFIX="${D}"/usr docdir="${ED}/usr/share/doc/${PF}" install
 
-	rm "${ED}/usr/share/man/man1/kak.1.gz" || die
+	# rm "${ED}/usr/share/man/man1/kak.1.gz" || die
 	doman doc/kak.1
 }
